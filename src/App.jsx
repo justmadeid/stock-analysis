@@ -433,7 +433,7 @@ export default function App() {
         <div>
           <div className="flex items-center gap-2">
             <span className="glowing-dot"></span>
-            <span className="text-xs uppercase tracking-widest text-cyan font-semibold num-font">UAS QUANT FINANCE LAB</span>
+            <span className="text-xs uppercase tracking-widest text-cyan font-semibold num-font">UAS Made Garda Setiawan - 573702</span>
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight mt-1">
             Quantum Buffett Terminal
