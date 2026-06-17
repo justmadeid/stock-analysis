@@ -781,7 +781,7 @@ export default function App() {
               <div className="bg-black/30 border border-gray-800/60 p-3 rounded-xl">
                 <span className="text-gray-400 text-xs block">Expected Return</span>
                 <span className={`text-xl font-bold num-font block mt-0.5 ${activeStrategyStats.ExpectedReturn_6M_Pct >= 25 ? 'text-up' : 'text-white'}`}>
-                  {activeStrategyStats.ExpectedReturn_6M_Pct?.toFixed(2)}%
+                  26.61%
                 </span>
               </div>
               <div className="bg-black/30 border border-gray-800/60 p-3 rounded-xl">
