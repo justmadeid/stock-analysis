@@ -848,69 +848,6 @@ export default function App() {
 
           </div>
 
-          {/* Model Fit Performance Card */}
-          <div className="glass-card p-6">
-            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-              <Activity size={18} className="text-cyan" />
-              Model Backtest Metrics
-            </h3>
-            <p className="text-gray-400 text-xs mb-4">
-              Historical MAPE results for {selectedStock} forecasting models across backtesting loops.
-            </p>
-
-            {/* Horizontal Bar Chart comparing MAPEs */}
-            <div style={{ width: '100%', height: 160 }} className="mb-4">
-              <ResponsiveContainer>
-                <BarChart
-                  data={stockModelMetrics.map(item => ({
-                    model: item.Model,
-                    mape: item.MAPE,
-                    color: item.IsBest === 'True' ? 'var(--color-cyan)' : 'var(--text-muted)'
-                  }))}
-                  layout="vertical"
-                  margin={{ top: 0, right: 10, left: 10, bottom: 0 }}
-                >
-                  <XAxis type="number" hide />
-                  <YAxis
-                    dataKey="model"
-                    type="category"
-                    stroke="#9ca3af"
-                    tick={{ fill: '#9ca3af', fontSize: 10 }}
-                    tickLine={false}
-                    axisLine={false}
-                    width={60}
-                  />
-                  <Tooltip
-                    formatter={(value) => [`${parseFloat(value).toFixed(2)}%`, 'MAPE']}
-                    contentStyle={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderRadius: '6px' }}
-                  />
-                  <Bar dataKey="mape" radius={4}>
-                    {stockModelMetrics.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={entry.IsBest === 'True' ? 'var(--color-cyan)' : 'rgba(255, 255, 255, 0.15)'}
-                      />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* Best Model Badge & Summary */}
-            <div className="bg-black/30 border border-gray-800 p-3.5 rounded-xl flex items-center justify-between">
-              <div>
-                <span className="text-gray-500 text-xs block">BACKTEST WINNER</span>
-                <span className="font-bold text-white block mt-0.5">{stockStats.BestModel} Model</span>
-              </div>
-              <div className="text-right">
-                <span className="text-gray-500 text-xs block">LOWEST MAPE</span>
-                <span className="font-bold text-cyan num-font block mt-0.5">
-                  {stockStats.BacktestBestMAPE?.toFixed(2)}%
-                </span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
       </main>
