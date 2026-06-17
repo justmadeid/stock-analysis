@@ -779,13 +779,10 @@ export default function App() {
             {/* Portfolio Summary Stats */}
             <div className="grid grid-cols-2 gap-3 mb-6">
               <div className="bg-black/30 border border-gray-800/60 p-3 rounded-xl">
-                <span className="text-gray-400 text-xs block">6M Expected Return</span>
+                <span className="text-gray-400 text-xs block">Expected Return</span>
                 <span className={`text-xl font-bold num-font block mt-0.5 ${activeStrategyStats.ExpectedReturn_6M_Pct >= 25 ? 'text-up' : 'text-white'}`}>
                   {activeStrategyStats.ExpectedReturn_6M_Pct?.toFixed(2)}%
                 </span>
-                {activeStrategyStats.ExpectedReturn_6M_Pct >= 25 && (
-                  <span className="text-[10px] text-up block font-medium mt-0.5">UAS Target Passed &ge; 25%</span>
-                )}
               </div>
               <div className="bg-black/30 border border-gray-800/60 p-3 rounded-xl">
                 <span className="text-gray-400 text-xs block">Sharpe Ratio</span>
